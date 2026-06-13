@@ -1,6 +1,5 @@
-public class Pet {
+abstract class Pet {
     private String name;
-
     public String getName() {
         return name;
     }
@@ -9,19 +8,25 @@ public class Pet {
         this.name = petName;
     }
 
-    public String speak(){
-        return "";
-    }
+    abstract String speak();
+    abstract String getType();
 }
 
 class Dog extends Pet {
+
     public String speak() {
         return "woof woof !";
+    }
+    public String getType() {
+        return "dog";
     }
 }
 
 class Cat extends Pet {
     public String speak () {
         return "meaw meaw!";
+    }
+    public String getType() {
+        return "cat";
     }
 }
